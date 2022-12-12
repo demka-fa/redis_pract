@@ -2,7 +2,11 @@
 import redis
 
 #TODO Поменять
-CURRENT_DB = 1
+#CURRENT_DB = 1
+#CURRENT_HOST = "127.0.0.1"
+#CURRENT_PASSWRD = "password"
+
+CURRENT_DB = 7
 CURRENT_HOST = "127.0.0.1"
 CURRENT_PASSWRD = "password"
 
