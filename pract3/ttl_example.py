@@ -1,8 +1,11 @@
 import os
 import redis
 import time
-# import typing as t
-from config import HOST, PASSW, DB
+
+CURRENT_DB = 0
+CURRENT_HOST = "127.0.0.1"
+CURRENT_PASSWORD = "password"
+
 
 def ttl_example(r: redis.Redis) -> None:
     """
@@ -32,8 +35,7 @@ def ttl_remove(r:redis.Redis) -> None:
 
 def main():
 
-    r = redis.Redis(host=HOST, password=PASSW,
-                    decode_responses=True, db=DB)
+    r = redis.Redis(host=CURRENT_HOST, password=CURRENT_PASSWORD, decode_responses=True, db=CURRENT_DB)
 
     ttl_example(r)
     ttl_remove(r)

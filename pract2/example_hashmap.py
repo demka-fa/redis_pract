@@ -3,10 +3,9 @@ import random
 
 import redis
 
-#TODO Поменять
-CURRENT_DB = 7
+CURRENT_DB = 0
 CURRENT_HOST = "127.0.0.1"
-CURRENT_PASSWRD = "password"
+CURRENT_PASSWORD = "password"
 
 
 class NewYearWish:
