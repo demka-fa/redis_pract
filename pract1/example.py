@@ -2,14 +2,9 @@
 import redis
 
 #TODO Поменять
-#CURRENT_DB = 1
-#CURRENT_HOST = "127.0.0.1"
-#CURRENT_PASSWRD = "password"
-
 CURRENT_DB = 7
 CURRENT_HOST = "127.0.0.1"
 CURRENT_PASSWRD = "password"
-
 def main():
 
     cli = redis.Redis(host=CURRENT_HOST, password=CURRENT_PASSWRD, port=6379, decode_responses=True, db=CURRENT_DB)
