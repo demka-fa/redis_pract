@@ -1,4 +1,5 @@
 from datetime import datetime, timedelta
+#Запускать через rq worker --url redis://:secrets@example.com:1234/9 --with-scheduler с терминалки
 import time
 
 def print_task(seconds):

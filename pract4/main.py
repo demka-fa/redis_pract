@@ -1,10 +1,19 @@
-from datetime import datetime, timedelta
-import time
-from redis import Redis
+# pip install rq
+from datetime import timedelta
+
+import redis
 from rq import Queue
+
 import tasks
 
-queue = Queue(connection=Redis())
+
+
+CURRENT_DB = 0
+CURRENT_HOST = "127.0.0.1"
+CURRENT_PASSWORD = "password"
+
+cli = redis.Redis(host=CURRENT_HOST, password=CURRENT_PASSWORD, decode_responses=True, db=CURRENT_DB)
+queue = Queue(connection=cli)
 
 def queue_tasks():
     queue.enqueue(tasks.print_task, 5)
