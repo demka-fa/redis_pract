@@ -9,7 +9,7 @@ import redis
 CURRENT_DB = 0
 CURRENT_HOST = "127.0.0.1"
 CURRENT_PASSWORD = "password"
-
+CACHE_TTL = 900
 
 def get_item_from_db(value) -> int:
     random_item = random.randint(10,100)
@@ -27,7 +27,7 @@ def get_item(item_id):
         return {"result" : cache_item}
 
     item_data = get_item_from_db(item_id)
-    cli.set(item_id, item_data)
+    cli.setex(item_id, CACHE_TTL, item_data)
     return  {"result" : item_data}
 
 app.run(host='127.0.0.1',port=8000, threaded=True)

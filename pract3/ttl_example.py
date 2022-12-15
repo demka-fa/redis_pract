@@ -40,7 +40,7 @@ def main():
 
     ttl_example(cli)
     ttl_remove(cli)
-    time.sleep(5)  # для того чтобы истек срок действия ключей
+    time.sleep(5)  # для того чтобы истек срок действия ключей используем time.sleep
     print(f"Ключи которые остались:{cli.keys()}")
 
 
